@@ -91,14 +91,16 @@ alert(Descuento())
 //8)
 
 function Notas(){
-    let Notas = prompt('Introduce una nota')
+    let Notas = Number(prompt('Introduce una nota'))
     if  (Notas <= 100)
     {
         return 'Tu nota es un MS'
-    }else if (Notas <80){
+    }else if (Notas <= 79){
         return 'Tu nota es una S'
-   }else{
+   }else if (Notas <= 59){
     return 'Tu nota es un EP'
+    }else{
+        return 'Número invalido'
     }
 }
 alert(Notas())
@@ -128,9 +130,10 @@ alert(NúmeroDeDía())
 //10)
 
 function AñoBisiesto(){
-    let Año = Number(prompt ('Introduce un año'))
-    if((Año / 400 === 0) || ((Año /4 === 0) && (Año /100 !== 0))){
-        return 'Es bisiesto'
+    let año = Number(prompt('Introduce un año'))
+    if ((año % 400 === 0) || (año % 4 === 0) && (año % 100 !== 0))
+    {
+        return 'El año es bisiesto'
     }else{
         return 'El año no es bisiesto'
     }
@@ -150,7 +153,7 @@ function ComprobarTexto(){
 }
 alert(ComprobarTexto())
 
-//2) 
+//12) 
 
 function Edad(){
     let Edad = 2023 - prompt('Introduce el año de nacimiento') 
