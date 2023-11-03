@@ -40,13 +40,11 @@ if (Categoría <= 11)
 //4)
 
 let díasDeLaSemana = prompt('Introduce un día')
-if (díasDeLaSemana == 'Sábado')
+if ((díasDeLaSemana == 'Sábado') || (díasDeLaSemana == 'Domingo'))
 {
     alert('Es fin de semana')
-}else if (díasDeLaSemana == 'Domingo') {
-    alert('Es fin de semana')
 }else{
-    alert('Es un día de semana')
+    alert('Es un día laborable')
 }
 
 //5)
@@ -64,7 +62,7 @@ if (Contraseña == 'Secreto')
 function MúltiploDe5 ()
 {
     let MúltiploDe5 = prompt('Introduce un número')
-    if (MúltiploDe5 / 5 == true)
+    if (MúltiploDe5 % 5 == 0)
     {
         return 'El número es múltiplo de 5'
     }else{
@@ -77,11 +75,10 @@ alert(MúltiploDe5())
 
 function Descuento (){
     let Edad = prompt('Introduce tu edad')
-    let Precio = 2500
-    let PrecioSinDesuento = 2250
+    let Precio = Number(prompt('Introduce un precio cualquiera'))
     if (Edad >= 65)
     {
-        return 'El precio del producto es ' + PrecioSinDesuento
+        return 'El precio del producto es ' + (Precio - 10 * Precio / 100)
     }else{
         return 'El precio del producto es ' + Precio
     }
@@ -91,14 +88,14 @@ alert(Descuento())
 //8)
 
 function Notas(){
-    let Notas = Number(prompt('Introduce una nota'))
-    if  (Notas <= 100)
+    let Notas = prompt('Introduce una nota')
+    if (Notas <= 10)
     {
         return 'Tu nota es un MS'
-    }else if (Notas <= 79){
+    }else if((Notas >= 60) && (Notas <= 80)){
         return 'Tu nota es una S'
-   }else if (Notas <= 59){
-    return 'Tu nota es un EP'
+    }else if (Notas < 60){
+        return 'Tu nota es un EP'
     }else{
         return 'Número invalido'
     }
